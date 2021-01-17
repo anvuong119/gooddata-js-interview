@@ -3,7 +3,7 @@ import { Divider, Layout, Menu } from 'antd';
 import { BarChartOutlined, LineChartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.jpg';
-import styles from './Menu.module.scss';
+import styles from './Navigation.module.scss';
 
 const { Sider } = Layout;
 const { Item } = Menu;
@@ -35,7 +35,14 @@ const menus: Menus[] = [
 ];
 
 export const Navigation: FunctionComponent<NavigationProps> = ({ collapsed }) => (
-  <Sider trigger={null} collapsible collapsed={collapsed}>
+  <Sider
+    width={256}
+    breakpoint="lg"
+    trigger={null}
+    collapsible
+    collapsed={collapsed}
+    className={styles.navigation}
+  >
     <div className={styles.brand}>
       <div className={styles.logo}>
         <img src={logo} alt="logo" />

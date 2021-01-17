@@ -17,7 +17,7 @@ const GrossProfitAllMonths: FunctionComponent<GrossProfitAllMonthsProps> = ({
 }) => (
   <>
     <Page inner>
-      <h1>$ Gross Profit - All months</h1>
+      <div className={styles.title}>$ Gross Profit - All months</div>
       <div className={styles.columnChart}>
         <ColumnChart measures={measures} viewBy={viewBy} projectId={projectId} />
       </div>

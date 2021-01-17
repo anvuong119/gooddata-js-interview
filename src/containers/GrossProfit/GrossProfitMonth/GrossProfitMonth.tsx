@@ -22,9 +22,9 @@ const GrossProfitMonthView: React.FC<GrossProfitMonthViewProps> = ({
 }) => (
   <>
     <Page inner>
-      <h1>
+      <div className={styles.title}>
         $ Gross Profit in month <MonthSelect dispatchMonthChange={dispatchMonthChange} /> 2016
-      </h1>
+      </div>
       <div className={styles.columnChart}>
         <ColumnChart measures={measures} filters={[filter]} projectId={projectId} />
       </div>

@@ -3,9 +3,9 @@ import styles from './Page.module.scss';
 import { Loading } from '../Loading';
 
 export interface PageProps {
-  children?: ReactNode;
+  children: ReactNode;
   loading?: boolean;
-  inner: boolean;
+  inner?: boolean;
 }
 
 export const Page: FunctionComponent<PageProps> = ({

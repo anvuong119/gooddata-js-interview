@@ -1,6 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { Dropdown, Layout, Menu, Space, Typography } from 'antd';
-import { DownOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { Dropdown, Layout, Menu, Space, Typography, Avatar } from 'antd';
+import {
+  DownOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import styles from './Header.module.scss';
 
 const { Text } = Typography;
@@ -21,7 +26,9 @@ export const Header: FunctionComponent<HeaderProps> = ({ collapsed, toggleCollap
   );
 
   return (
-    <Layout.Header className={styles.header}>
+    <Layout.Header
+      className={`${styles.header} ${styles.fixed} ${collapsed ? styles.collapsed : null}`}
+    >
       <div className={styles.button} onClick={toggleCollapse}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </div>
@@ -29,9 +36,10 @@ export const Header: FunctionComponent<HeaderProps> = ({ collapsed, toggleCollap
         <Dropdown overlay={menu}>
           <span>
             <Space>
-              <Text type="warning">Hi</Text>
+              <Avatar size="large" icon={<UserOutlined />} />
+              <Text type="warning">Hi, </Text>
               <Text type="success" strong>
-                <DownOutlined />
+                Guest <DownOutlined />
               </Text>
             </Space>
           </span>
