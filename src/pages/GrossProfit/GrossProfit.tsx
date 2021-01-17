@@ -7,8 +7,8 @@ import { VisualizationObject } from '@gooddata/typings';
 import { PROJECT_ID } from '../../constants';
 // eslint-disable-next-line object-curly-newline
 import { formatDate, INITIAL_MONTH_FILTER, MEASURES, VIEW_BY } from '../../utils/helpers';
-import GrossProfitMonth from '../../features/GrossProfit/GrossProfitMonth/GrossProfitMonth';
-import GrossProfitAllMonths from '../../features/GrossProfit/GrossProfitAllMonths/GrossProfitAllMonths';
+import GrossProfitMonth from '../../containers/GrossProfit/GrossProfitMonth/GrossProfitMonth';
+import GrossProfitAllMonths from '../../containers/GrossProfit/GrossProfitAllMonths/GrossProfitAllMonths';
 
 const GrossProfit: FunctionComponent = () => {
   const [filter, setFilter] = useState<VisualizationObject.IVisualizationObjectAbsoluteDateFilter>(
