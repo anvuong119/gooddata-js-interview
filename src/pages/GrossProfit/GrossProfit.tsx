@@ -1,10 +1,9 @@
 // Copyright (C) 2007-2019, GoodData(R) Corporation. All rights reserved.
-
 import '@gooddata/react-components/styles/css/main.css';
 import React, { FunctionComponent } from 'react';
+import GrossProfitAllMonths from '../../components/GrossProfit/GrossProfitAllMonths';
+import GrossProfitMonth from '../../components/GrossProfit/GrossProfitMonth';
 import { PROJECT_ID } from '../../constants';
-import GrossProfitAllMonths from '../../containers/GrossProfit/GrossProfitAllMonths/GrossProfitAllMonths';
-import GrossProfitMonth from '../../containers/GrossProfit/GrossProfitMonth/GrossProfitMonth';
 import { MEASURES, VIEW_BY } from '../../utils/helpers';
 
 const GrossProfit: FunctionComponent = () => (

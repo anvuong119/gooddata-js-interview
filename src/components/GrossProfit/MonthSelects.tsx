@@ -1,9 +1,9 @@
 import { ChangeEvent, FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MONTHS, YEARS } from '../../../constants';
-import { updateActiveMonth, updateActiveYear } from '../../../pages/GrossProfit/grossProfitSlice';
+import { MONTHS, YEARS } from '../../constants';
+import { updateActiveMonth, updateActiveYear } from '../../pages/GrossProfit/grossProfitSlice';
 
-const Selects: FunctionComponent = () => {
+const MonthSelects: FunctionComponent = () => {
   const dispatch = useDispatch();
   const grossProfit = useSelector((state: any) => state.grossProfit);
   const { activeMonth, activeYear } = grossProfit;
@@ -45,4 +45,4 @@ const Selects: FunctionComponent = () => {
   );
 };
 
-export default Selects;
+export default MonthSelects;

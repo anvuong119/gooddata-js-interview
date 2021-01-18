@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { GROSS_PROFIT_MEASURE, DATE_ATTR_IN_MONTHS, DATE_ATTR } from '../../constants';
+import { DATE_ATTR, DATE_ATTR_IN_MONTHS, GROSS_PROFIT_MEASURE } from '../../constants';
 
 export function getFilter(activeMonth: number, activeYear: number) {
   const date = new Date(activeYear, activeMonth, 0);

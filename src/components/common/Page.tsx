@@ -1,5 +1,5 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import { Loading } from '../Loading';
+import { FunctionComponent, ReactNode } from 'react';
+import { Loading } from './Loading';
 import styles from './Page.module.scss';
 
 export interface PageProps {

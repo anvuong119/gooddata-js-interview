@@ -1,8 +1,8 @@
 import { BarChartOutlined, LineChartOutlined } from '@ant-design/icons';
 import { Divider, Layout, Menu } from 'antd';
 import React, { FunctionComponent, ReactNode } from 'react';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
-import logo from '../../../assets/images/logo.jpg';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/images/logo.jpg';
 import styles from './Navigation.module.scss';
 
 const { Sider } = Layout;
@@ -50,14 +50,12 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ collapsed }) =>
       </div>
     </div>
     <Divider />
-    <Router>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={[menus[0].name]}>
-        {menus.map((menu) => (
-          <Item key={menu.name} icon={menu.icon}>
-            <Link to={menu.route}>{menu.title}</Link>
-          </Item>
-        ))}
-      </Menu>
-    </Router>
+    <Menu theme="dark" mode="inline" defaultSelectedKeys={[menus[0].name]}>
+      {menus.map((menu) => (
+        <Item key={menu.name} icon={menu.icon}>
+          <Link to={menu.route}>{menu.title}</Link>
+        </Item>
+      ))}
+    </Menu>
   </Sider>
 );

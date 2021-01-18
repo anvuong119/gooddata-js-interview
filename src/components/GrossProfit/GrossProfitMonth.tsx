@@ -3,10 +3,10 @@ import { ColumnChart } from '@gooddata/react-components';
 import { VisualizationObject } from '@gooddata/typings';
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
-import { Page } from '../../../components/common';
-import { getFilter } from '../../../utils/helpers';
+import { getFilter } from '../../utils/helpers';
+import { Page } from '../common';
 import styles from './GrossProfitMonth.module.scss';
-import Selects from './Selects';
+import Selects from './MonthSelects';
 
 export interface GrossProfitMonthProps {
   measures: VisualizationObject.BucketItem[];

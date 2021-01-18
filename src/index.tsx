@@ -1,16 +1,19 @@
 // Copyright (C) 2007-2019, GoodData(R) Corporation. All rights reserved.
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import { Provider } from 'react-redux';
-import App from './App';
+import { Loading } from './components/common';
+import './index.scss';
+import AppLayouts from './layouts/AppLayouts';
+import store from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
-import store from './app/store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Suspense fallback={<Loading spinning />}>
+      <AppLayouts />
+    </Suspense>
   </Provider>,
   document.getElementById('root'),
 );
