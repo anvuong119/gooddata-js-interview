@@ -1,7 +1,7 @@
+import { BackTop, Layout } from 'antd';
 import React, { FunctionComponent, useState } from 'react';
 import { Route } from 'react-router-dom';
-import { Layout, BackTop } from 'antd';
-import { Header, Navigation, Footer } from '../components/layout';
+import { Footer, Header, Navigation } from '../components/layout';
 import grossProfitRoutes from '../pages/GrossProfit/routes';
 import styles from './PrivateRoute.module.scss';
 

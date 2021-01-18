@@ -1,1 +1,1 @@
-export { default } from './GrossProfit';
+export * from './GrossProfit';

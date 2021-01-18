@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Loading } from '../components/common';
+import PrivateRoute from './PrivateRoute';
 
 const AppRoutes = () => (
   <Router>

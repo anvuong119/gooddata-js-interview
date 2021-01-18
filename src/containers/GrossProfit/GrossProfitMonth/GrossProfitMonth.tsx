@@ -1,29 +1,22 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
 import { ColumnChart } from '@gooddata/react-components';
 import { VisualizationObject } from '@gooddata/typings';
-import MonthSelect from './MonthSelect';
+import React, { FunctionComponent } from 'react';
 import { Page } from '../../../components/common';
 import styles from './GrossProfitMonth.module.scss';
+import Selects from './Selects';
 
-export interface GrossProfitMonthViewProps {
+export interface GrossProfitMonthProps {
   measures: VisualizationObject.BucketItem[];
-  filter: VisualizationObject.VisualizationObjectFilter;
+  // filter: VisualizationObject.VisualizationObjectFilter;
   projectId: string;
-  // eslint-disable-next-line no-unused-vars
-  dispatchMonthChange: (month: string) => void;
 }
 
-const GrossProfitMonthView: React.FC<GrossProfitMonthViewProps> = ({
-  measures,
-  filter,
-  projectId,
-  dispatchMonthChange,
-}) => (
+const GrossProfitMonth: FunctionComponent<GrossProfitMonthProps> = ({ measures, projectId }) => (
   <>
     <Page inner>
       <div className={styles.title}>
-        $ Gross Profit in month <MonthSelect dispatchMonthChange={dispatchMonthChange} /> 2016
+        $ Gross Profit in month <Selects />
       </div>
       <div className={styles.columnChart}>
         <ColumnChart measures={measures} filters={[filter]} projectId={projectId} />
@@ -32,4 +25,4 @@ const GrossProfitMonthView: React.FC<GrossProfitMonthViewProps> = ({
   </>
 );
 
-export default GrossProfitMonthView;
+export default GrossProfitMonth;

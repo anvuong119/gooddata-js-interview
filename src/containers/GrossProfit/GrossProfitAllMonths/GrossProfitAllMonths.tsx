@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
 import { ColumnChart } from '@gooddata/react-components';
 import { VisualizationObject } from '@gooddata/typings';
+import React, { FunctionComponent } from 'react';
 import { Page } from '../../../components/common';
 import styles from './GrossProfitAllMonth.module.scss';
 

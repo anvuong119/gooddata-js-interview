@@ -1,19 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+interface FilterGrossProfit {
+  activeMonth: number;
+  activeYear: number;
+}
+
+const initialState = {
+  activeMonth: 0,
+  activeYear: 2015,
+} as FilterGrossProfit;
+
 const chartsSlide = createSlice({
-  name: 'chart',
-  initialState: 0,
+  name: 'gross-profit',
+  initialState,
   reducers: {
     updateActiveMonth: (state, action) => {
-      console.log(state);
-      const activeMonth = action.payload;
-      state = parseInt(activeMonth);
-      return state;
+      const { activeMonth } = action.payload;
+      state.activeMonth = parseInt(activeMonth);
     },
     updateActiveYear: (state, action) => {
-      const activeYear = action.payload;
-      state = parseInt(activeYear);
-      return state;
+      const { activeYear } = action.payload;
+      state.activeYear = parseInt(activeYear);
     },
   },
 });
