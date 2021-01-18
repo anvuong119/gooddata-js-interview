@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, CSSProperties } from 'react';
+import { FunctionComponent, ReactNode, CSSProperties } from 'react';
 import styles from './Footer.module.scss';
 
 export interface FooterProps {

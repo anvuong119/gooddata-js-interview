@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
-import { Dropdown, Layout, Menu, Space, Typography, Avatar } from 'antd';
 import {
   DownOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import { Avatar, Dropdown, Layout, Menu, Space, Typography } from 'antd';
+import React, { FunctionComponent } from 'react';
 import styles from './Header.module.scss';
 
 const { Text } = Typography;

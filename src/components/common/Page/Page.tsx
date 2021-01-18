@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import styles from './Page.module.scss';
 import { Loading } from '../Loading';
+import styles from './Page.module.scss';
 
 export interface PageProps {
   children: ReactNode;

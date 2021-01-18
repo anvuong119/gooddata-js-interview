@@ -1,4 +1,4 @@
-import { BackTop, Layout } from 'antd';
+import { Layout } from 'antd';
 import React, { FunctionComponent, useState } from 'react';
 import { Route } from 'react-router-dom';
 import { Footer, Header, Navigation } from '../components/layout';
@@ -22,17 +22,13 @@ const PrivateRoute: FunctionComponent<PrivateRouteProps> = () => {
     <Layout className={styles.layout}>
       <Navigation collapsed={collapsed} />
       <Layout>
-        <div className={styles.container} style={{ paddingTop: 72 }} id="primaryLayout">
+        <div className={styles.container} style={{ paddingTop: 72 }}>
           <Header collapsed={collapsed} toggleCollapse={handleCollapse} />
           <Content className={styles.content}>
             {privateRoutes.map(({ path, exact, component: Component }) => (
               <Route path={path} exact={exact} key={path} render={() => <Component />} />
             ))}
           </Content>
-          <BackTop
-            className={styles.backTop}
-            // target={() => document.querySelector('#primaryLayout')}
-          />
           <Footer copyright="Copyright to Good Data - Duc Nguyen @2021" />
         </div>
       </Layout>

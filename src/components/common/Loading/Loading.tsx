@@ -1,5 +1,5 @@
-import { FunctionComponent, ReactNode } from 'react';
 import { LoadingComponent } from '@gooddata/sdk-ui';
+import { FunctionComponent, ReactNode } from 'react';
 import styles from './Loading.module.scss';
 
 export interface LoadingProps {

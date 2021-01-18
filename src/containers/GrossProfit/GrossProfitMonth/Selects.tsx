@@ -1,10 +1,12 @@
-import { FunctionComponent, ChangeEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { ChangeEvent, FunctionComponent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { MONTHS, YEARS } from '../../../constants';
 import { updateActiveMonth, updateActiveYear } from '../../../pages/GrossProfit/grossProfitSlice';
-import { MONTHS } from '../../../constants';
 
 const Selects: FunctionComponent = () => {
   const dispatch = useDispatch();
+  const grossProfit = useSelector((state: any) => state.grossProfit);
+  const { activeMonth, activeYear } = grossProfit;
 
   const handleMonthChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const month = e.target.value;
@@ -19,10 +21,9 @@ const Selects: FunctionComponent = () => {
   };
 
   const renderMonthSelect = () => (
-    <select defaultValue="1" onChange={handleMonthChange}>
-      {MONTHS.map((monthItem, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <option key={index} value={index + 1}>
+    <select defaultValue={activeMonth} onChange={handleMonthChange}>
+      {MONTHS.map((monthItem, idx) => (
+        <option key={idx} value={idx + 1}>
           {monthItem}
         </option>
       ))}
@@ -30,12 +31,10 @@ const Selects: FunctionComponent = () => {
   );
 
   const renderYearSelect = () => (
-    <select defaultValue="2015" onChange={handleYearChange}>
-      <option value="2015">2015</option>
-      <option value="2016">2016</option>
-      <option value="2017">2017</option>
-      <option value="2018">2018</option>
-      <option value="2019">2019</option>
+    <select defaultValue={activeYear} onChange={handleYearChange}>
+      {YEARS.map((yearItem, idx) => (
+        <option key={idx} value={yearItem}>{yearItem}</option>
+      ))}
     </select>
   );
 

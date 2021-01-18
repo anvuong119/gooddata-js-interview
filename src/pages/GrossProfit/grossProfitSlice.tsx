@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface FilterGrossProfit {
+export interface FilterGrossProfit {
   activeMonth: number;
   activeYear: number;
 }
 
 const initialState = {
-  activeMonth: 0,
-  activeYear: 2015,
+  activeMonth: localStorage.getItem('month_filter') || 1,
+  activeYear: localStorage.getItem('year_filter') || 2015,
 } as FilterGrossProfit;
 
 const chartsSlide = createSlice({
@@ -15,12 +15,14 @@ const chartsSlide = createSlice({
   initialState,
   reducers: {
     updateActiveMonth: (state, action) => {
-      const { activeMonth } = action.payload;
+      const activeMonth = action.payload;
       state.activeMonth = parseInt(activeMonth);
+      localStorage.setItem('month_filter', activeMonth);
     },
     updateActiveYear: (state, action) => {
-      const { activeYear } = action.payload;
+      const activeYear = action.payload;
       state.activeYear = parseInt(activeYear);
+      localStorage.setItem('year_filter', activeYear);
     },
   },
 });
