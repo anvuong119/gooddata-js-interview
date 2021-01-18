@@ -1,11 +1,13 @@
-# gooddata-js-interview
-Frontend Interview Examples
+# GoodData Homework
+## Duc Nguyen - Frontend Interview - LHV Software
 
-## GoodData Homework
+Frontend position homework at LHV Software with the mission of improving [GoodData.UI](https://sdk.gooddata.com/gooddata-ui/).
 
 ### Introduction
 
-Your task is to enhance the application using the [GoodData.UI](https://sdk.gooddata.com/gooddata-ui/).
+In the application, I used the GoodData UI library to render Charts, data processing, and filters. To make the interface more intuitive, I have incorporated the Antd Design library. States management using Redux Tookit.
+
+I used my software architecture and design skills to make code reusable, so the application would be the first component of a large-scale application.
 
 ### Prerequisites
 
@@ -23,18 +25,11 @@ To successfully complete this tutorial, you are required to:
 4. Run `yarn start`.
 5. Visit https://localhost:3000/account.html, and log in using your GoodData account credentials.
    - If you do not have a GoodData account yet, [create one](https://gooddata-examples.herokuapp.com/registration). After creating a GoodData account, you will be redirected to our GoodData.UI Live Examples. Feel free to get inspired there, but its not related to this homework.
-6. Visit https://localhost:3000/, and make sure that two column charts are loaded like this:
+#####Account Test:
+    Email: zendy199x@gmail.com
+    Password: test@123
 
-![Screenshot after initialization](https://github.com/gooddata/gooddata-js-interview/blob/master/public/screen.png "Initialization Screenshot")
-
-### Task
-
-__Make the dropdown work. That is, the dropdown `onChange` should reload the upper chart appropriately.__
-
-When you are done, send us the link to your source code repo and the instructions how to run the demo.
-
-We are looking for re-usable code. You are strongly encouraged to "over-engineer" this to show off your software architecture and designing skills. Assume that this abstract application will be the first component of a large scale application.
-
+6. Visit https://localhost:3000/.
 ### GoodData.UI Documentation
 
 [GoodData.UI Documentation](https://sdk.gooddata.com/gooddata-ui/docs/about_gooddataui.html)
@@ -52,9 +47,6 @@ We are looking for re-usable code. You are strongly encouraged to "over-engineer
 
 ##### You get the "Your connection is not private" error in Chrome
 * To work around this, enable the [chrome://flags/#allow-insecure-localhost](chrome://flags/#allow-insecure-localhost) flag while working on the assignment. 
-
-###### Anything else?
-* Contact your recruiter for further information.
 
 ---
 
