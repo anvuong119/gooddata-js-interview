@@ -1,11 +1,14 @@
 // Copyright (C) 2007-2019, GoodData(R) Corporation. All rights reserved.
 
-import React, { FunctionComponent, Fragment } from 'react';
-import AppRoutes from './routes';
+import React, { FunctionComponent, Suspense } from 'react';
+import AppLayouts from './layouts/AppLayouts';
+import { Loading } from './components/common';
 
 const App: FunctionComponent = () => (
   <>
-    <AppRoutes />
+    <Suspense fallback={<Loading spinning />}>
+      <AppLayouts />
+    </Suspense>
   </>
 );
 
