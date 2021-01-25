@@ -5,6 +5,7 @@
   "dependencies": {
     "@gooddata/react-components": "^7.9.0",
     "@gooddata/sdk-ui-pivot": "^8.1.0",
+    "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "antd": "^4.10.2",
@@ -12,8 +13,10 @@
     "http-proxy-middleware": "^1.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.1"
+    "react-scripts": "^4.0.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "cross-env HTTPS=true react-app-rewired start",
@@ -31,6 +34,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",

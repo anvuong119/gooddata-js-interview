@@ -2,15 +2,19 @@
 
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { Loading } from '_components/common';
-import './index.scss';
+import store from '_redux/store';
 import App from './App';
+import './index.scss';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Suspense fallback={<Loading spinning />}>
-    <App />
-  </Suspense>,
+  <Provider store={store}>
+    <Suspense fallback={<Loading spinning />}>
+      <App />
+    </Suspense>
+  </Provider>,
   document.getElementById('root'),
 );
 registerServiceWorker();

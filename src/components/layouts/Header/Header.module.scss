@@ -15,9 +15,11 @@
     position: fixed;
     top: 0;
     right: 0;
+    padding: 0px 20px 0px 0px;
     width: calc(100% - 256px);
     z-index: 29;
     transition: width 0.2s;
+    background-color: #fff;
 
     &.collapsed {
       width: calc(100% - 80px);
