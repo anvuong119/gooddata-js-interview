@@ -1,0 +1,15 @@
+@import './default.scss';
+
+@mixin text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin background-hover {
+  transition: $transition-ease-in;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
