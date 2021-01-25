@@ -1,15 +1,16 @@
 // Copyright (C) 2007-2019, GoodData(R) Corporation. All rights reserved.
 
-// eslint-disable-next-line no-use-before-define
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Loading } from '_components/common';
 import './index.scss';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  // eslint-disable-next-line react/jsx-filename-extension
-  <App />,
+  <Suspense fallback={<Loading spinning />}>
+    <App />
+  </Suspense>,
   document.getElementById('root'),
 );
 registerServiceWorker();

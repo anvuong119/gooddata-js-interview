@@ -1,59 +1,36 @@
-// Copyright (C) 2007-2019, GoodData(R) Corporation. All rights reserved.
+import { Layout } from 'antd';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Footer } from '_components/layouts/Footer';
+import { Header } from '_components/layouts/Header';
+import { MenuNavigation } from '_components/layouts/MenuNavigation';
+import AppRoutes from '_routes';
+import styles from './App.module.scss';
 
-import React from 'react';
-import '@gooddata/react-components/styles/css/main.css';
-
-import { ColumnChart, Model } from '@gooddata/react-components';
-
-const grossProfitMeasure = '/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/6877';
-const dateAttributeInMonths = '/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2142';
-const dateAttribute = '/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/2180';
+const { Content } = Layout;
 
 const App: React.FC = () => {
-  const getMonthFilter = () => Model.absoluteDateFilter(dateAttribute, '2016-01-01', '2016-01-31');
+  const [collapsed, setCollapse] = useState(false);
 
-  const getMeasures = () => [
-    Model.measure(grossProfitMeasure).localIdentifier('m1').alias('$ Gross Profit'),
-  ];
-
-  const getViewBy = () => Model.attribute(dateAttributeInMonths).localIdentifier('a1');
-
-  const renderDropdown = () => (
-    <select defaultValue="1">
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12">December</option>
-    </select>
-  );
-
-  const projectId = 'xms7ga4tf3g3nzucd8380o2bev8oeknp';
-  const filters = [getMonthFilter()];
-  const measures = getMeasures();
-  const viewBy = getViewBy();
+  const handleCollapse = () => {
+    setCollapse(!collapsed);
+  };
 
   return (
-    <div className="App">
-      <h1>
-        $ Gross Profit in month
-        {renderDropdown()} 2016
-      </h1>
-      <div>
-        <ColumnChart measures={measures} filters={filters} projectId={projectId} />
-      </div>
-      <h1>$ Gross Profit - All months</h1>
-      <div>
-        <ColumnChart measures={measures} viewBy={viewBy} projectId={projectId} />
-      </div>
-    </div>
+    <>
+      <Router>
+        <Layout className={styles.layout}>
+          <MenuNavigation collapsed={collapsed} />
+          <div className={styles.container} style={{ paddingTop: 72 }}>
+            <Header collapsed={collapsed} toggleCollapse={handleCollapse} />
+            <Content className={styles.content}>
+              <AppRoutes />
+            </Content>
+            <Footer copyright="Copyright to Good Data - Duc Nguyen @2021" />
+          </div>
+        </Layout>
+      </Router>
+    </>
   );
 };
 
