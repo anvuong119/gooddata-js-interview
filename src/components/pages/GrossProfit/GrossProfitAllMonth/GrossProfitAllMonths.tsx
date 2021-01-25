@@ -1,6 +1,7 @@
 import { ColumnChart } from '@gooddata/react-components';
 import { VisualizationObject } from '@gooddata/typings';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Page } from '_components/common';
 import styles from './GrossProfitAllMonth.module.scss';
 
@@ -15,10 +16,12 @@ const GrossProfitAllMonths: React.FC<GrossProfitAllMonthsProps> = ({
   viewBy,
   projectId,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Page>
-        <div className={styles.title}>$ Gross Profit - All months</div>
+        <div className={styles.title}>{t('good_data.gross_profit_all_month')}</div>
         <div className={styles.columnChart}>
           <ColumnChart measures={measures} viewBy={viewBy} projectId={projectId} />
         </div>

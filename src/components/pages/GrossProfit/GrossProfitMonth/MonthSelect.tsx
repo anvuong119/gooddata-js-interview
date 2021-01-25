@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChangeEvent, FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateActiveMonth } from '../grossProfitSlice';
 
@@ -8,6 +8,7 @@ interface MonthSelectProps {
 }
 
 const MonthSelect: FunctionComponent<MonthSelectProps> = ({ listMonth }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const grossProfit = useSelector((state: any) => state.grossProfit);
   const { activeMonth } = grossProfit;
@@ -22,7 +23,7 @@ const MonthSelect: FunctionComponent<MonthSelectProps> = ({ listMonth }) => {
     <select defaultValue={activeMonth} onChange={handleMonthChange}>
       {listMonth.map((monthItem, idx) => (
         <option key={idx} value={idx + 1}>
-          {monthItem}
+          {t(monthItem)}
         </option>
       ))}
     </select>

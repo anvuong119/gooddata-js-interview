@@ -2,13 +2,14 @@
 import { ColumnChart } from '@gooddata/react-components';
 import { VisualizationObject } from '@gooddata/typings';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getFilter } from '_utils/helpers';
 import { Page } from '_components/common';
+import { MONTHS, YEARS } from '_constants';
+import { getFilter } from '_utils/helpers';
 import styles from './GrossProfitMonth.module.scss';
 import MonthSelect from './MonthSelect';
 import YearSelect from './YearSelect';
-import { MONTHS, YEARS } from '_constants';
 
 export interface GrossProfitMonthProps {
   measures: VisualizationObject.BucketItem[];
@@ -16,6 +17,8 @@ export interface GrossProfitMonthProps {
 }
 
 const GrossProfitMonth: React.FC<GrossProfitMonthProps> = ({ measures, projectId }) => {
+  const { t } = useTranslation();
+
   const grossProfit = useSelector((state: any) => state.grossProfit);
   const { activeMonth, activeYear } = grossProfit;
   const filter = getFilter(activeMonth, activeYear);
@@ -23,7 +26,7 @@ const GrossProfitMonth: React.FC<GrossProfitMonthProps> = ({ measures, projectId
     <>
       <Page>
         <div className={styles.title}>
-          $ Gross Profit in month <MonthSelect listMonth={MONTHS} /> -{' '}
+          {t('good_data.gross_profit_in_month')} <MonthSelect listMonth={MONTHS} /> -{' '}
           <YearSelect listYear={YEARS} />
         </div>
         <div className={styles.columnChart}>

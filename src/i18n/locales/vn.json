@@ -1,0 +1,32 @@
+{
+  "layout": {
+    "title_gooddata": "GOOD DATA",
+    "header_hi": "Xin chào, ",
+    "header_guest": "Khách",
+    "header_change_password": "Đổi mật khẩu",
+    "header_logout": "Đăng xuất",
+    "footer_copyright": "Bản quyền thuộc về Good Data - Duc Nguyen @2021",
+    "not_found": "Không tìm thấy trang",
+    "menu_gross_profit": "Lợi nhuận",
+    "menu_charts": "Biểu đồ"
+  },
+  "good_data": {
+    "gross_profit_in_month": "$ Lợi nhuận theo tháng",
+    "gross_profit_all_month": "$ Lợi nhuận tất cả các tháng",
+    "month_january": "Tháng 1",
+    "month_february": "Tháng 2",
+    "month_march": "Tháng 3",
+    "month_april": "Tháng 4",
+    "month_may": "Tháng 5",
+    "month_june": "Tháng 6",
+    "month_july": "Tháng 7",
+    "month_august": "Tháng 8",
+    "month_september": "Tháng 9",
+    "month_october": "Tháng 10",
+    "month_november": "Tháng 11",
+    "month_december": "Tháng 12"
+  },
+  "charts": {
+    "charts": "Biểu đồ"
+  }
+}

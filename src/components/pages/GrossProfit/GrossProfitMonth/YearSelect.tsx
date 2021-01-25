@@ -1,5 +1,4 @@
-import React from 'react';
-import { ChangeEvent, FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateActiveYear } from '../grossProfitSlice';
 

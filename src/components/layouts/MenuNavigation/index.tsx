@@ -2,6 +2,7 @@ import { BarChartOutlined, LineChartOutlined } from '@ant-design/icons';
 import { Divider, Layout, Menu } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import logo from '_assets/images/logo.jpg';
 import styles from './MenuNavigation.module.scss';
 
@@ -20,13 +21,13 @@ interface Menus {
 
 const menus: Menus[] = [
   {
-    title: 'Gross Profit',
+    title: 'layout.menu_gross_profit',
     name: 'GROSS_PROFIT',
     route: '/gross-profit',
     icon: <BarChartOutlined />,
   },
   {
-    title: 'Charts',
+    title: 'layout.menu_charts',
     name: 'CHARTS',
     route: '/charts',
     icon: <LineChartOutlined />,
@@ -34,6 +35,7 @@ const menus: Menus[] = [
 ];
 
 export const MenuNavigation: React.FC<MenuNavigationProps> = ({ collapsed }) => {
+  const { t } = useTranslation();
   return (
     <Sider
       width={256}
@@ -46,14 +48,14 @@ export const MenuNavigation: React.FC<MenuNavigationProps> = ({ collapsed }) => 
       <div className={styles.brand}>
         <div className={styles.logo}>
           <img src={logo} alt="logo" />
-          {!collapsed && <h1>GOOD DATA</h1>}
+          {!collapsed && <h1>{t('layout.title_gooddata')}</h1>}
         </div>
       </div>
       <Divider />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={[menus[0].name]}>
         {menus.map((menu) => (
           <Item key={menu.name} icon={menu.icon}>
-            <Link to={menu.route}>{menu.title}</Link>
+            <Link to={menu.route}>{t(menu.title)}</Link>
           </Item>
         ))}
       </Menu>

@@ -1,0 +1,33 @@
+{
+  "layout": {
+    "title_gooddata": "GOOD DATA",
+    "header_hi": "Hi, ",
+    "header_guest": "Guest",
+    "header_change_password": "Change password",
+    "header_logout": "Logout",
+    "footer_copyright": "Copyright to Good Data - Duc Nguyen @2021",
+    "not_found": "404 Not Found",
+    "menu_gross_profit": "Gross Profit",
+    "menu_charts": "Charts"
+  },
+  "good_data": {
+    "good_data": "GOOD DATA",
+    "gross_profit_in_month": "$ Gross Profit in month",
+    "gross_profit_all_month": "$ Gross Profit - All months",
+    "month_january": "January",
+    "month_february": "February",
+    "month_march": "March",
+    "month_april": "April",
+    "month_may": "May",
+    "month_june": "June",
+    "month_july": "July",
+    "month_august": "August",
+    "month_september": "September",
+    "month_october": "October",
+    "month_november": "November",
+    "month_december": "December"
+  },
+  "charts": {
+    "charts": "Charts"
+  }
+}
