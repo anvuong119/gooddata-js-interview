@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@gooddata/react-components": "^7.9.0",
-    "@gooddata/sdk-ui-pivot": "^8.1.0",
+    "@gooddata/sdk-ui": "^8.1.0",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
